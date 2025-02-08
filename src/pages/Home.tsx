@@ -41,7 +41,7 @@ export const Home = () => {
 
   return (
     <div>
-      <div className="mb-6">
+      <div>
         <TextField
           type="search"
           label="Search errors"
@@ -63,7 +63,7 @@ export const Home = () => {
         onRowClicked={(row) => navigate(`/error/${row["Error Code"]}`)}
       />
 
-      <div className="mt-4">
+      <div>
         <Button onPress={() => navigate("/feedback")} variant="secondary">
           Provide Feedback
         </Button>

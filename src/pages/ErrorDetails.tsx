@@ -16,20 +16,16 @@ export const ErrorDetails = () => {
 
   return (
     <div>
-      <Button
-        onPress={() => navigate("/")}
-        variant="secondary"
-        className="mb-4"
-      >
+      <Button onPress={() => navigate("/")} variant="secondary">
         Back to list
       </Button>
 
-      <h1 className="text-2xl font-bold mb-6">{error["Error Code"]}</h1>
+      <h1>{error["Error Code"]}</h1>
 
-      <div className="grid gap-4">
+      <div>
         {Object.entries(error).map(([key, value]) => (
-          <div key={key} className="border-b pb-2">
-            <div className="font-semibold">{key}</div>
+          <div key={key}>
+            <div>{key}</div>
             <div>{value || "N/A"}</div>
           </div>
         ))}

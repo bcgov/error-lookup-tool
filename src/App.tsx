@@ -7,9 +7,9 @@ import { Feedback } from "./pages/Feedback";
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gray-50">
+      <div>
         <Header title="Error Lookup Tool" />
-        <main className="container mx-auto px-4 py-8">
+        <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/error/:errorCode" element={<ErrorDetails />} />

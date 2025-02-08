@@ -35,9 +35,9 @@ export const Feedback = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-6">Submit Feedback</h1>
+      <h1>Submit Feedback</h1>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit}>
         <TextField
           type="text"
           label="Name"
