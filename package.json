@@ -13,6 +13,7 @@
     "@bcgov/bc-sans": "^2.1.0",
     "@bcgov/design-system-react-components": "^0.5.1",
     "react": "^19.0.0",
+    "react-data-table-component": "^7.6.2",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.5"
   },
