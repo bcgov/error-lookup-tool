@@ -8,7 +8,9 @@ export default function App() {
   return (
     <BrowserRouter>
       <div>
-        <Header title="Error Lookup Tool" />
+        <div className="w-full flex float-left">
+          <Header title="Error Lookup Tool" />
+        </div>
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
