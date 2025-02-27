@@ -1,8 +1,15 @@
+import { Heading, Link, Text } from "@bcgov/design-system-react-components";
+import "./AboutThisTool.css";
+
 export const AboutThisTool = () => {
   return (
-    <div>
-      <h1>About this tool</h1>
-      <p>This page is currently under construction! Please check back later</p>
+    <div className="container">
+      <Heading level={4}>About this tool</Heading>
+      <Text size="small">
+        The Look up tool is an internal resource to SDD. If you have any
+        questions or want to help document an error, please contact us at{" "}
+        <Link size="small">placeholder email</Link>
+      </Text>
     </div>
   );
 };
