@@ -10,7 +10,7 @@ import { Troubleshooting } from "./pages/Troubleshooting";
 export default function App() {
   return (
     <BrowserRouter>
-      <div>
+      <div className="site-wrapper">
         <HeaderPage />
         <Routes>
           <Route path="/" element={<Home />} />

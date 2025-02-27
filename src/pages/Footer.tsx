@@ -1,10 +1,20 @@
-import { Footer } from "@bcgov/design-system-react-components";
+import "./FooterStyles.css";
+import { Link } from "@bcgov/design-system-react-components";
 
 export const FooterPage = () => {
   return (
-    <Footer
-      copyright="© 2025 Government of British Columbia! | Update log | Feedback"
-      hideAcknowledgement
-    ></Footer>
+    <footer className="custom-footer">
+      <hr className="footer-line" />
+      <p className="footer-text">
+        <span>© 2025 Government of British Columbia</span>|
+        <Link size="small" href="/update-log">
+          Update log
+        </Link>
+        |
+        <Link size="small" href="/feedback">
+          Feedback
+        </Link>
+      </p>
+    </footer>
   );
 };
