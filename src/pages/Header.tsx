@@ -2,11 +2,23 @@ import { Header, Button } from "@bcgov/design-system-react-components";
 import lookupIcon from "../assets/look-up-logo.svg";
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "./HeaderStyles.css";
+
+type MenuItem = {
+  label: string;
+  path: string;
+};
 
 export const HeaderPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+
+  const menuItems: MenuItem[] = [
+    { label: "Troubleshooting Help", path: "/troubleshooting-help" },
+    { label: "Update Log", path: "/update-log" },
+    { label: "Feedback", path: "/feedback" },
+  ];
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -26,157 +38,47 @@ export const HeaderPage = () => {
     setIsMenuOpen(false);
   };
 
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
-    <div className="header-container" style={{ position: "relative" }}>
+    <div className="header-container">
       <Header
         logoImage={
-          <img
-            src={lookupIcon}
-            alt="Look Up Logo"
-            style={{ width: "auto", height: "32px" }}
-          />
+          <img src={lookupIcon} alt="Look Up Logo" className="logo-image" />
         }
         title="Error Messages"
         titleElement="span"
       />
 
-      <div
-        ref={menuRef}
-        style={{
-          position: "absolute",
-          top: "12px",
-          right: "64px",
-        }}
-      >
+      <div ref={menuRef} className="menu-button-container">
         <Button
           variant="secondary"
-          onPress={() => setIsMenuOpen(!isMenuOpen)}
+          onPress={toggleMenu}
           aria-expanded={isMenuOpen}
           aria-haspopup="true"
           aria-label="Open menu"
         >
           Menu
-          <div
-            style={{
-              display: "inline-flex",
-              flexDirection: "column",
-              gap: "3px",
-              marginLeft: "8px",
-            }}
-          >
-            <span
-              style={{
-                width: "18px",
-                height: "2px",
-                background: "currentColor",
-              }}
-            ></span>
-            <span
-              style={{
-                width: "18px",
-                height: "2px",
-                background: "currentColor",
-              }}
-            ></span>
-            <span
-              style={{
-                width: "18px",
-                height: "2px",
-                background: "currentColor",
-              }}
-            ></span>
+          <div className="hamburger-icon">
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
           </div>
         </Button>
 
         {isMenuOpen && (
-          <div
-            style={{
-              position: "absolute",
-              top: "calc(100% + 8px)",
-              right: 0,
-              width: "220px",
-              backgroundColor: "white",
-              border: "1px solid #ccc",
-              borderRadius: "4px",
-              boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-              zIndex: 1000,
-            }}
-          >
-            <ul
-              style={{
-                listStyle: "none",
-                padding: 0,
-                margin: 0,
-              }}
-            >
-              <li>
-                <button
-                  onClick={() => handleMenuItemClick("/troubleshooting-help")}
-                  style={{
-                    width: "100%",
-                    textAlign: "left",
-                    padding: "12px 16px",
-                    border: "none",
-                    background: "none",
-                    cursor: "pointer",
-                    fontSize: "16px",
-                    borderBottom: "1px solid #eee",
-                  }}
-                  onMouseOver={(e) =>
-                    (e.currentTarget.style.backgroundColor = "#f5f5f5")
-                  }
-                  onMouseOut={(e) =>
-                    (e.currentTarget.style.backgroundColor = "transparent")
-                  }
-                >
-                  Troubleshooting Help
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleMenuItemClick("/update-log")}
-                  style={{
-                    width: "100%",
-                    textAlign: "left",
-                    padding: "12px 16px",
-                    border: "none",
-                    background: "none",
-                    cursor: "pointer",
-                    fontSize: "16px",
-                    borderBottom: "1px solid #eee",
-                  }}
-                  onMouseOver={(e) =>
-                    (e.currentTarget.style.backgroundColor = "#f5f5f5")
-                  }
-                  onMouseOut={(e) =>
-                    (e.currentTarget.style.backgroundColor = "transparent")
-                  }
-                >
-                  Update Log
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleMenuItemClick("/feedback")}
-                  style={{
-                    width: "100%",
-                    textAlign: "left",
-                    padding: "12px 16px",
-                    border: "none",
-                    background: "none",
-                    cursor: "pointer",
-                    fontSize: "16px",
-                  }}
-                  onMouseOver={(e) =>
-                    (e.currentTarget.style.backgroundColor = "#f5f5f5")
-                  }
-                  onMouseOut={(e) =>
-                    (e.currentTarget.style.backgroundColor = "transparent")
-                  }
-                >
-                  Feedback
-                </button>
-              </li>
+          <div className="dropdown-menu">
+            <ul className="menu-list">
+              {menuItems.map((item, index) => (
+                <li key={index}>
+                  <button
+                    className="menu-item-button"
+                    onClick={() => handleMenuItemClick(item.path)}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
         )}
