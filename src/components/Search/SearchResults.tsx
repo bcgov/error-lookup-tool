@@ -16,16 +16,31 @@ const SearchResults = ({ filteredData }: SearchResultsProps) => {
       sortable: true,
     },
     {
+      name: "Datagroup",
+      selector: (row: ErrorEntry) => row["Datagroup"],
+      sortable: true,
+    },
+    {
       name: "Error Message",
       selector: (row: ErrorEntry) => row["Error Message"],
       sortable: true,
     },
-    {
-      name: "Source System",
-      selector: (row: ErrorEntry) => row["Source System"],
-      sortable: true,
-    },
   ];
+
+  const customStyles = {
+    headCells: {
+      style: {
+        backgroundColor: "#f1f1f1",
+        fontWeight: "bold",
+        borderBottom: "2px solid #ccc",
+      },
+    },
+    table: {
+      style: {
+        border: "2px solid #ccc",
+      },
+    },
+  };
 
   return (
     <div className="search-table">
@@ -33,11 +48,12 @@ const SearchResults = ({ filteredData }: SearchResultsProps) => {
         columns={columns}
         data={filteredData}
         pagination
-        paginationPerPage={5}
+        paginationPerPage={10}
         highlightOnHover
         pointerOnHover
-        paginationRowsPerPageOptions={[5, 10, 20, 50, filteredData.length]}
+        paginationRowsPerPageOptions={[10, 20, 50, filteredData.length]}
         onRowClicked={(row) => navigate(`/error/${row["Error Code"]}`)}
+        customStyles={customStyles}
       />
     </div>
   );
