@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home/Home";
-import { HeaderPage } from "./pages/Header/Header";
-import { FooterPage } from "./pages/Footer/Footer";
+import { HeaderPage } from "./components/Header/Header";
+import { FooterPage } from "./components/Footer/Footer";
 import { ErrorDetails } from "./pages/ErrorDetails/ErrorDetails";
 import { Feedback } from "./pages/Feedback/Feedback";
 import { UpdateLog } from "./pages/UpdateLog/UpdateLog";
