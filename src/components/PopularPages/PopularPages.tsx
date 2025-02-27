@@ -4,11 +4,13 @@ import {
   Heading,
 } from "@bcgov/design-system-react-components";
 import { useNavigate } from "react-router-dom";
-import popularPages from "../../data/popular-pages.json";
+import data from "../../data/errors.json";
 import "./PopularPages.css";
 
 export const PopularPages = () => {
   const navigate = useNavigate();
+
+  const popularPages = data["popular-pages"];
 
   const handleButtonClick = (path: string) => {
     navigate(`/${path}`);

@@ -28,16 +28,18 @@ const SearchResults = ({ filteredData }: SearchResultsProps) => {
   ];
 
   return (
-    <DataTable
-      columns={columns}
-      data={filteredData}
-      pagination
-      paginationPerPage={5}
-      highlightOnHover
-      pointerOnHover
-      paginationRowsPerPageOptions={[5, 10, 20, 50, filteredData.length]}
-      onRowClicked={(row) => navigate(`/error/${row["Error Code"]}`)}
-    />
+    <div className="search-table">
+      <DataTable
+        columns={columns}
+        data={filteredData}
+        pagination
+        paginationPerPage={5}
+        highlightOnHover
+        pointerOnHover
+        paginationRowsPerPageOptions={[5, 10, 20, 50, filteredData.length]}
+        onRowClicked={(row) => navigate(`/error/${row["Error Code"]}`)}
+      />
+    </div>
   );
 };
 

@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom";
 
 import { ErrorEntry } from "../../types";
-import errorData from "../../data/errors.json";
+import data from "../../data/errors.json";
 import { AboutThisTool } from "../../components/AboutThisTool/AboutThisTool";
 import { BackToSearch } from "../../components/BackToSearch/BackToSearch";
 
 export const ErrorDetails = () => {
   const { errorCode } = useParams();
-  const error = errorData.find(
+  const error = data["errors"].find(
     (e: ErrorEntry) => e["Error Code"] === errorCode
   );
 
