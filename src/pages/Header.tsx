@@ -50,7 +50,6 @@ export const HeaderPage = () => {
           <img src={lookupIcon} alt="Look Up Logo" className="logo-image" />
         }
         title="Error Messages"
-        titleElement="span"
       >
         <div ref={menuRef} className="menu-container">
           <Button size="small" variant="secondary" onPress={toggleMenu}>
