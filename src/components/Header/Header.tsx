@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import LookupIcon from "../../assets/look-up-logo.svg";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
-import MenuIcon from "../../assets/icon-menu.svg";
+import MenuIcon from "@mui/icons-material/Menu";
 
 type MenuItem = {
   label: string;
@@ -53,7 +53,7 @@ export const HeaderPage = () => {
       >
         <div ref={menuRef} className="menu-container">
           <Button size="small" variant="secondary" onPress={toggleMenu}>
-            Menu <img src={MenuIcon} alt="Menu Icon" />
+            Menu <MenuIcon />
           </Button>
 
           {isMenuOpen && (
