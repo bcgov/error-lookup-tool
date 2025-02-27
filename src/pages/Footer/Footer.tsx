@@ -1,4 +1,4 @@
-import "./FooterStyles.css";
+import "./Footer.css";
 import { Link } from "@bcgov/design-system-react-components";
 
 export const FooterPage = () => {

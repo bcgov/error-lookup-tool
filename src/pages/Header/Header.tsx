@@ -1,9 +1,9 @@
 import { Header, Button } from "@bcgov/design-system-react-components";
 import { useState, useRef, useEffect } from "react";
-import lookupIcon from "../assets/look-up-logo.svg";
+import LookupIcon from "../../assets/look-up-logo.svg";
 import { useNavigate } from "react-router-dom";
-import "./HeaderStyles.css";
-import MenuIcon from "../assets/icon-menu.svg";
+import "./Header.css";
+import MenuIcon from "../../assets/icon-menu.svg";
 
 type MenuItem = {
   label: string;
@@ -47,7 +47,7 @@ export const HeaderPage = () => {
     <div className="header-container">
       <Header
         logoImage={
-          <img src={lookupIcon} alt="Look Up Logo" className="logo-image" />
+          <img src={LookupIcon} alt="Look Up Logo" className="logo-image" />
         }
         title="Error Messages"
       >

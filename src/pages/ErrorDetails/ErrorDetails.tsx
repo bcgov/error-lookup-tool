@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@bcgov/design-system-react-components";
-import { ErrorEntry } from "../types";
-import errorData from "../data/errors.json";
+import { ErrorEntry } from "../../types";
+import errorData from "../../data/errors.json";
 
 export const ErrorDetails = () => {
   const { errorCode } = useParams();

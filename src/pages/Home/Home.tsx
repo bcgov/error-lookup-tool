@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { TextField, Button } from "@bcgov/design-system-react-components";
+import { TextField } from "@bcgov/design-system-react-components";
 import DataTable from "react-data-table-component";
-import { ErrorEntry } from "../types";
-import errorData from "../data/errors.json";
+import { ErrorEntry } from "../../types";
+import errorData from "../../data/errors.json";
+import { AboutThisTool } from "../AboutThisTool/AboutThisTool";
 
 export const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -62,12 +63,7 @@ export const Home = () => {
         paginationRowsPerPageOptions={[5, 10, 20, 50, filteredData.length]}
         onRowClicked={(row) => navigate(`/error/${row["Error Code"]}`)}
       />
-
-      <div>
-        <Button onPress={() => navigate("/feedback")} variant="secondary">
-          Provide Feedback
-        </Button>
-      </div>
+      <AboutThisTool />
     </div>
   );
 };
