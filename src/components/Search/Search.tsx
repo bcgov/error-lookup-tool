@@ -1,14 +1,12 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { TextField } from "@bcgov/design-system-react-components";
-import DataTable from "react-data-table-component";
 import { ErrorEntry } from "../../types";
 import errorData from "../../data/errors.json";
+import SearchBar from "./SearchBar";
+import SearchResults from "./SearchResults";
 
 export const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredData, setFilteredData] = useState<ErrorEntry[]>(errorData);
-  const navigate = useNavigate();
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -21,45 +19,10 @@ export const Search = () => {
     setFilteredData(filtered);
   };
 
-  const columns = [
-    {
-      name: "Error Code",
-      selector: (row: ErrorEntry) => row["Error Code"],
-      sortable: true,
-    },
-    {
-      name: "Error Message",
-      selector: (row: ErrorEntry) => row["Error Message"],
-      sortable: true,
-    },
-    {
-      name: "Source System",
-      selector: (row: ErrorEntry) => row["Source System"],
-      sortable: true,
-    },
-  ];
   return (
     <>
-      <div>
-        <TextField
-          type="search"
-          label="Search errors"
-          id="search"
-          value={searchTerm}
-          size="medium"
-          onInput={handleSearch}
-        />
-      </div>
-      <DataTable
-        columns={columns}
-        data={filteredData}
-        pagination
-        paginationPerPage={5}
-        highlightOnHover
-        pointerOnHover
-        paginationRowsPerPageOptions={[5, 10, 20, 50, filteredData.length]}
-        onRowClicked={(row) => navigate(`/error/${row["Error Code"]}`)}
-      />
+      <SearchBar searchTerm={searchTerm} onSearchChange={handleSearch} />
+      <SearchResults filteredData={filteredData} />
     </>
   );
 };
