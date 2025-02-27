@@ -1,11 +1,12 @@
-import { useParams, useNavigate } from "react-router-dom";
-import { Button } from "@bcgov/design-system-react-components";
+import { useParams } from "react-router-dom";
+
 import { ErrorEntry } from "../../types";
 import errorData from "../../data/errors.json";
+import { AboutThisTool } from "../../components/AboutThisTool/AboutThisTool";
+import { BackToSearch } from "../../components/BackToSearch/BackToSearch";
 
 export const ErrorDetails = () => {
   const { errorCode } = useParams();
-  const navigate = useNavigate();
   const error = errorData.find(
     (e: ErrorEntry) => e["Error Code"] === errorCode
   );
@@ -15,10 +16,8 @@ export const ErrorDetails = () => {
   }
 
   return (
-    <div>
-      <Button onPress={() => navigate("/")} variant="secondary">
-        Back to list
-      </Button>
+    <>
+      <BackToSearch />
 
       <h1>{error["Error Code"]}</h1>
 
@@ -30,6 +29,8 @@ export const ErrorDetails = () => {
           </div>
         ))}
       </div>
-    </div>
+
+      <AboutThisTool />
+    </>
   );
 };
