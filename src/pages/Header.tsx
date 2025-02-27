@@ -15,7 +15,7 @@ export const HeaderPage = () => {
   const navigate = useNavigate();
 
   const menuItems: MenuItem[] = [
-    { label: "Troubleshooting Help", path: "/troubleshooting-help" },
+    { label: "Troubleshooting Help", path: "/troubleshooting" },
     { label: "Update Log", path: "/update-log" },
     { label: "Feedback", path: "/feedback" },
   ];
