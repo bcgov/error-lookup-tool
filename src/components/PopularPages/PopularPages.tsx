@@ -15,7 +15,7 @@ export const PopularPages = () => {
   };
 
   return (
-    <div>
+    <div className="popular-pages">
       <Heading level={4}>Popular pages</Heading>
       <ButtonGroup
         alignment="start"

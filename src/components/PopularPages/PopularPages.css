@@ -1,0 +1,9 @@
+.popular-pages {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.popular-pages > h4 {
+  padding-bottom: 10px;
+}
