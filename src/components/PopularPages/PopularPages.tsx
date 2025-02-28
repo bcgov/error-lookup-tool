@@ -22,7 +22,7 @@ export const PopularPages = () => {
       <ButtonGroup
         alignment="start"
         ariaLabel="Popular pages"
-        orientation="horizontal"
+        orientation="horizontal" // make vetical on mobile/tablet
       >
         {popularPages.map((page, index) => (
           <Button

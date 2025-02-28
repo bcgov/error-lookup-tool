@@ -14,11 +14,18 @@ const SearchResults = ({ filteredData }: SearchResultsProps) => {
       name: "Error Code",
       selector: (row: ErrorEntry) => row["Error Code"],
       sortable: true,
+      width: "150px",
+      cell: (row: ErrorEntry) => (
+        <div style={{ color: "#255A90", textDecoration: "underline" }}>
+          {row["Error Code"]}
+        </div>
+      ),
     },
     {
       name: "Datagroup",
       selector: (row: ErrorEntry) => row["Datagroup"],
       sortable: true,
+      width: "220px",
     },
     {
       name: "Error Message",
