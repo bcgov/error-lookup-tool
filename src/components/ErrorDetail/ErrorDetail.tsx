@@ -20,7 +20,9 @@ export const ErrorDetail = ({
       <Text size="small">Error Code</Text>
       <Heading level={1}>{errorCode}</Heading>
       <div className="message-container">
-        <Text>Message</Text>
+        <Text>
+          <strong>Message</strong>
+        </Text>
         <Text>{errorMessage || "No message data available"}</Text>
       </div>
       {limitedData && <LimitedData />}

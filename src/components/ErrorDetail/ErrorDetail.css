@@ -2,14 +2,35 @@
   width: 80%;
   margin: 0 auto;
   background-color: white;
-  padding: 20px;
-  border: 2px black solid;
+  padding: 30px;
+  border: 2px solid #d3d3d3;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.error-detail-container > * {
+  margin-bottom: 20px;
 }
 
 .message-container {
   background-color: #f1f8fe;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.message-container strong {
+  display: block;
+  margin-bottom: 8px;
 }
 
 .limited-data-container {
   width: 50%;
+}
+
+.limited-data-container div {
+  margin-top: 20px;
+}
+
+.limited-data-container h4 {
+  margin-bottom: 10px;
 }

@@ -8,7 +8,7 @@ import "./HelpSolveYourProblem.css";
 export const HelpSolveYourProblem = () => {
   return (
     <div className="help-container">
-      <Text>Did this page help solve your problem?</Text>
+      <Text size="small">Did this page help solve your problem?</Text>
       <ButtonGroup alignment="end">
         <Button size="small" variant="secondary">
           Yes
