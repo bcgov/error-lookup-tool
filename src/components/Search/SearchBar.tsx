@@ -2,6 +2,7 @@ import {
   TextField,
   Text,
   Heading,
+  Button,
 } from "@bcgov/design-system-react-components";
 import data from "../../data/errors.json";
 import StarImage from "../../assets/star.png";
@@ -9,10 +10,11 @@ import SearchIcon from "@mui/icons-material/Search";
 
 interface SearchBarProps {
   searchTerm: string;
-  onSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  setSearchTerm: (term: string) => void;
+  onSearchClick: () => void;
 }
 
-const SearchBar = ({ searchTerm, onSearchChange }: SearchBarProps) => {
+const SearchBar = ({ searchTerm, setSearchTerm, onSearchClick }: SearchBarProps) => {
   const lastUpdated = data["last-upated"];
 
   return (
@@ -33,8 +35,12 @@ const SearchBar = ({ searchTerm, onSearchChange }: SearchBarProps) => {
             id="search"
             value={searchTerm}
             size="medium"
-            onInput={onSearchChange}
+            onChange={(e) => setSearchTerm(e)}
+            className="wide-search-bar"
           />
+          <Button onPress={onSearchClick} className="search-button">
+            Search
+          </Button>
         </div>
       </div>
     </div>

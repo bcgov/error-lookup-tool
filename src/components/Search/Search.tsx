@@ -7,16 +7,12 @@ import "./Search.css";
 
 export const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredData, setFilteredData] = useState<ErrorEntry[]>(
-    data["errors"]
-  );
+  const [filteredData, setFilteredData] = useState<ErrorEntry[]>(data["errors"]);
 
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setSearchTerm(value);
+  const handleSearch = () => {
     const filtered = data["errors"].filter((error) =>
       Object.values(error).some((field) =>
-        field.toLowerCase().includes(value.toLowerCase())
+        field.toLowerCase().includes(searchTerm.toLowerCase())
       )
     );
     setFilteredData(filtered);
@@ -24,7 +20,7 @@ export const Search = () => {
 
   return (
     <>
-      <SearchBar searchTerm={searchTerm} onSearchChange={handleSearch} />
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} onSearchClick={handleSearch} />
       <SearchResults filteredData={filteredData} />
     </>
   );

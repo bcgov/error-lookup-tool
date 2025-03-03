@@ -10,10 +10,37 @@
 
 .search-field {
   margin-top: 20px;
+  display: flex;
+  align-items: center;
+  width: 75%;
+  border-radius: 5px 0 0 5px !important;
+}
+
+.wide-search-bar {
+  flex-grow: 1;
+  min-width: 400px;
+}
+
+.wide-search-bar div {
+  border-radius: 5px 0 0 5px !important;
 }
 
 .search-field label {
   font-weight: 600;
+}
+
+.search-button {
+  background-color: #013366 !important;
+  color: white !important;
+  font-weight: bold;
+  padding: 8px 18px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  margin-top: 24px;
+}
+
+.search-button:hover {
+  background-color: #002855 !important;
 }
 
 .search-table {
