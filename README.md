@@ -1,50 +1,62 @@
-# React + TypeScript + Vite
+# Look up | Error Messages
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+Look up | Error Messages is a web application designed to help users quickly look up error codes and how to fix them. Built with [Vite](https://vitejs.dev/), [TypeScript](https://www.typescriptlang.org/) and [React](https://react.dev/).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Setup Instructions
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Install the following:
 
-- Configure the top-level `parserOptions` property like this:
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Installation
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/bcgov/error-lookup-tool.git
+   cd error-lookup-tool
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+### Development Server
+
+To start the development server, run:
+
+```sh
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+This will start Vite's development server, and you can access the app at `http://localhost:5173/`.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Building for Production
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+To create a production build, run:
+
+```sh
+npm run build
+```
+
+The build files will be generated in the `dist` directory.
+
+### Previewing the Build
+
+To preview the built project locally, use:
+
+```sh
+npm run preview
+```
+
+### Linting
+
+To run ESLint checks:
+
+```sh
+npm run lint
 ```
