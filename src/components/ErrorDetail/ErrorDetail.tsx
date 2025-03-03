@@ -4,6 +4,7 @@ import { TechnicalDetails } from "./TechnicalDetails";
 import { HelpSolveYourProblem } from "../HelpSolveYourProblem/HelpSolveYourProblem";
 import { ErrorEntry } from "../../types";
 import "./ErrorDetail.css";
+import { CauseAndFix } from "./CauseAndFix";
 
 interface ErrorDetailProps {
   error: ErrorEntry;
@@ -20,6 +21,7 @@ export const ErrorDetail = ({ error }: ErrorDetailProps) => {
         </Text>
         <Text>{error["ErrorMessage"] || "No message data available"}</Text>
       </div>
+      <CauseAndFix explanation={error["Explanation"]} fix={error["Fix"]} />
       {error["LimitedData"] && <LimitedData />}
       <TechnicalDetails
         errorCode={error["ErrorCode"]}

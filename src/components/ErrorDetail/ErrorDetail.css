@@ -24,8 +24,14 @@
   margin-bottom: 8px;
 }
 
-.limited-data-container {
-  width: 50%;
+.cause-and-fix-container {
+  width: 60%;
+}
+
+@media (max-width: 768px) {
+  .cause-and-fix-container {
+    width: 100%;
+  }
 }
 
 .limited-data-container {
