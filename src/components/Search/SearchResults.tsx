@@ -21,14 +21,14 @@ const SearchResults = ({ filteredData }: SearchResultsProps) => {
           tabIndex={0}
           onClick={() => navigate(`/error/${row["ErrorCode"]}`)}
           onKeyDown={(e) => {
-            if (e.key === 'Enter') {
+            if (e.key === "Enter") {
               navigate(`/error/${row["ErrorCode"]}`);
             }
           }}
         >
           {row["ErrorCode"]}
         </div>
-      )
+      ),
     },
     {
       name: "Datagroup",

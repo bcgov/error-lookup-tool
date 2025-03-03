@@ -1,5 +1,5 @@
 import { Heading, Text } from "@bcgov/design-system-react-components";
-import './UnderConstruction.css';
+import "./UnderConstruction.css";
 
 interface underConstructionProps {
   title: string;

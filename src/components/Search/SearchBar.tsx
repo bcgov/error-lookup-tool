@@ -15,14 +15,18 @@ interface SearchBarProps {
   onSearchClick: () => void;
 }
 
-const SearchBar = ({ searchTerm, setSearchTerm, onSearchClick }: SearchBarProps) => {
+const SearchBar = ({
+  searchTerm,
+  setSearchTerm,
+  onSearchClick,
+}: SearchBarProps) => {
   const lastUpdated = data["last-upated"];
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       onSearchClick();
     }
-  }
+  };
 
   return (
     <div className="outer-search-bar">

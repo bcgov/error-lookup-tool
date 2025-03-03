@@ -10,7 +10,9 @@ import "./PopularPages.css";
 
 export const PopularPages = () => {
   const navigate = useNavigate();
-  const [orientation, setOrientation] = useState<"horizontal" | "vertical">("horizontal");
+  const [orientation, setOrientation] = useState<"horizontal" | "vertical">(
+    "horizontal"
+  );
   const popularPages = data["popular-pages"];
 
   const handleResize = () => {
@@ -23,9 +25,9 @@ export const PopularPages = () => {
 
   useEffect(() => {
     handleResize();
-    
+
     window.addEventListener("resize", handleResize);
-    
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
