@@ -4,6 +4,7 @@ import { ErrorEntry } from "../../types";
 import data from "../../data/errors.json";
 import { AboutThisTool } from "../../components/AboutThisTool/AboutThisTool";
 import { BackToSearch } from "../../components/BackToSearch/BackToSearch";
+import { ErrorDetail } from "../../components/ErrorDetail/ErrorDetail";
 
 export const ErrorDetails = () => {
   const { errorCode } = useParams();
@@ -18,18 +19,7 @@ export const ErrorDetails = () => {
   return (
     <>
       <BackToSearch />
-
-      <h1>{error["ErrorCode"]}</h1>
-
-      <div>
-        {Object.entries(error).map(([key, value]) => (
-          <div key={key}>
-            <div>{key}</div>
-            <div>{value || "N/A"}</div>
-          </div>
-        ))}
-      </div>
-
+      <ErrorDetail errorCode={error["ErrorCode"]} errorMessage={error["ErrorMessage"]} limitedData={error["LimitedData"]}  />
       <AboutThisTool />
     </>
   );
