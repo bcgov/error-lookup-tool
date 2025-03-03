@@ -17,6 +17,12 @@ interface SearchBarProps {
 const SearchBar = ({ searchTerm, setSearchTerm, onSearchClick }: SearchBarProps) => {
   const lastUpdated = data["last-upated"];
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      onSearchClick();
+    }
+  }
+
   return (
     <div className="outer-search-bar">
       <div className="inner-search-bar">
@@ -36,6 +42,7 @@ const SearchBar = ({ searchTerm, setSearchTerm, onSearchClick }: SearchBarProps)
             value={searchTerm}
             size="medium"
             onChange={(e) => setSearchTerm(e)}
+            onKeyDown={handleKeyDown}
             className="wide-search-bar"
           />
           <Button onPress={onSearchClick} className="search-button">
