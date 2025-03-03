@@ -57,6 +57,25 @@
 }
 
 .header-container span {
-    font-size: 16px !important;
-    font-weight: 400 !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+
+.content-wrapper {
+  position: relative;
+}
+
+.blue-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  background-color: #d8eafd;
+  z-index: 0;
+}
+
+.content-container {
+  position: relative;
+  z-index: 1;
 }
