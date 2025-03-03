@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: lookup-service
+  labels:
+    app.kubernetes.io/name: lookup
+spec:
+  selector:
+    app.kubernetes.io/name: lookup
+  ports:
+    - protocol: TCP
+      port: {{ .Values.service.port }}
+      targetPort: 8080

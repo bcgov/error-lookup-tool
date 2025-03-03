@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: lookup-route
+  labels:
+    app.kubernetes.io/name: lookup
+spec:
+  to:
+    kind: Service
+    name: lookup-service
+  port:
+    targetPort: 8080
+  tls:
+    termination: edge

@@ -1,0 +1,4 @@
+apiVersion: v2
+name: lookup
+description: A Helm chart for deploying the error lookup tool
+version: 0.1.0
