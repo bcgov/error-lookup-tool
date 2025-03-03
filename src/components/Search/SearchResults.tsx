@@ -46,14 +46,14 @@ const SearchResults = ({ filteredData }: SearchResultsProps) => {
   const customStyles = {
     headCells: {
       style: {
-        backgroundColor: "#f1f1f1",
+        backgroundColor: "#F1F1F1",
         fontWeight: "bold",
-        borderBottom: "2px solid #ccc",
+        borderBottom: "2px solid #CCC",
       },
     },
     table: {
       style: {
-        border: "2px solid #ccc",
+        border: "2px solid #CCC",
       },
     },
   };

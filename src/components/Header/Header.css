@@ -7,6 +7,10 @@
   width: auto;
 }
 
+.bcds-header--line {
+  background-color: #FCBA19 !important;
+}
+
 .menu-container {
   display: flex;
   flex-direction: column;

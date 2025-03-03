@@ -6,7 +6,8 @@ import {
 } from "@bcgov/design-system-react-components";
 import data from "../../data/errors.json";
 import StarImage from "../../assets/star.png";
-import SearchIcon from "@mui/icons-material/Search";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 interface SearchBarProps {
   searchTerm: string;
@@ -35,7 +36,7 @@ const SearchBar = ({ searchTerm, setSearchTerm, onSearchClick }: SearchBarProps)
         </div>
         <div className="search-field">
           <TextField
-            iconLeft={<SearchIcon />}
+            iconLeft={<FontAwesomeIcon icon={faMagnifyingGlass} />}
             type="search"
             label="Search for error documentation"
             id="search"

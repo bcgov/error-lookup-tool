@@ -3,7 +3,8 @@ import { useState, useRef, useEffect } from "react";
 import LookupIcon from "../../assets/look-up-logo.svg";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
-import MenuIcon from "@mui/icons-material/Menu";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 type MenuItem = {
   label: string;
@@ -53,7 +54,7 @@ export const HeaderPage = () => {
       >
         <div ref={menuRef} className="menu-container">
           <Button size="small" variant="secondary" onPress={toggleMenu}>
-            Menu <MenuIcon />
+            Menu <FontAwesomeIcon icon={faBars} />
           </Button>
 
           {isMenuOpen && (
