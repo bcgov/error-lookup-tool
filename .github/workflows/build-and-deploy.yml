@@ -90,19 +90,27 @@ jobs:
   deploy:
     needs: build_and_push
     runs-on: ubuntu-latest
+    environment: ${{ github.ref == 'refs/heads/main' && 'prod' || (github.ref == 'refs/heads/dev' && 'dev') || github.ref == 'refs/heads/test' && 'test' }}
 
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4
 
+      - name: Install oc CLI
+        uses: redhat-actions/oc-installer@v1
+
       - name: Authenticate with OpenShift
         uses: redhat-actions/oc-login@v1
         with:
-          openshift_server_url: ${{ secrets.OPENSHIFT_SERVER }}
-          namespace: ${{ github.ref == 'refs/heads/main' && secrets.OPENSHIFT_PROD_NAMESPACE || (github.ref == 'refs/heads/dev' && secrets.OPENSHIFT_DEV_NAMESPACE) || secrets.OPENSHIFT_TEST_NAMESPACE }}
-          openshift_token: ${{ github.ref == 'refs/heads/main' && secrets.OPENSHIFT_PROD_TOKEN || (github.ref == 'refs/heads/dev' && secrets.OPENSHIFT_DEV_TOKEN) || secrets.OPENSHIFT_TEST_TOKEN }}
+          openshift_server_url: ${{ vars.OPENSHIFT_SERVER }}
+          namespace: ${{ vars.OPENSHIFT_NAMESPACE }}
+          openshift_token: ${{ secrets.OPENSHIFT_TOKEN }}
           insecure_skip_tls_verify: true
 
       - name: Deploy with Helm
         run: |
           helm upgrade --install lookup ./helm --set image.tag=${{ needs.build_and_push.outputs.image_tag }}
+
+      - name: Trigger OpenShift Rollout
+        run: |
+          oc rollout restart deployment/lookup
