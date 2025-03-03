@@ -1,8 +1,5 @@
+import { UnderConstruction } from '../../components/UnderConstruction/UnderConstruction';
+
 export const Feedback = () => {
-  return (
-    <div>
-      <h1>Feedback</h1>
-      <p>This page is currently under construction! Please check back later</p>
-    </div>
-  );
+  return <UnderConstruction title="Feedback" />;
 };
