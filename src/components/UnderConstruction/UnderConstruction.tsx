@@ -9,7 +9,7 @@ export const UnderConstruction = ({ title }: underConstructionProps) => {
   return (
     <div className="under-construction-text">
       <Heading level={4}>{title}</Heading>
-      <Text size="small">
+      <Text>
         This page is currently under construction! Please check back later.
       </Text>
     </div>

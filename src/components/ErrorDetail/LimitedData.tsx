@@ -35,7 +35,7 @@ export const LimitedData = () => {
   return (
     <div className="limited-data-container">
       <Heading level={4}>Limited Data</Heading>
-      <Text size="small">
+      <Text>
         Not all error messages have been documented in KLAMM yet, and some may
         be missing. You can help us improve the look-up tool by requesting
         documentation for this code.

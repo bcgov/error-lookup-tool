@@ -17,27 +17,19 @@ export const HelpSolveYourProblem = () => {
     <div className="help-container">
       {!response ? (
         <>
-          <Text size="small">Did this page help solve your problem?</Text>
+          <Text>Did this page help solve your problem?</Text>
           <ButtonGroup alignment="end">
-            <Button
-              size="small"
-              variant="secondary"
-              onPress={() => handleResponse("Yes")}
-            >
+            <Button variant="secondary" onPress={() => handleResponse("Yes")}>
               Yes
             </Button>
-            <Button
-              size="small"
-              variant="secondary"
-              onPress={() => handleResponse("No")}
-            >
+            <Button variant="secondary" onPress={() => handleResponse("No")}>
               No
             </Button>
           </ButtonGroup>
         </>
       ) : (
         <div className="response-message">
-          <Text size="small">Thank you for your response.</Text>
+          <Text>Thank you for your response.</Text>
         </div>
       )}
     </div>

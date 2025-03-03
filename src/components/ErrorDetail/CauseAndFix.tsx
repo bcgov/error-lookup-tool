@@ -15,7 +15,7 @@ export const CauseAndFix = ({ explanation, fix }: CauseAndFixProps) => {
             <strong>What caused this?</strong>
           </Text>
           <br />
-          <Text size="small">{explanation}</Text>
+          <Text>{explanation}</Text>
         </div>
       )}
       {fix && (
@@ -24,7 +24,7 @@ export const CauseAndFix = ({ explanation, fix }: CauseAndFixProps) => {
             <strong>How to resolve the error</strong>
           </Text>
           <br />
-          <Text size="small">{fix}</Text>
+          <Text>{fix}</Text>
         </div>
       )}
     </div>

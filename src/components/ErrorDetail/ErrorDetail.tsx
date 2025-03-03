@@ -13,7 +13,7 @@ interface ErrorDetailProps {
 export const ErrorDetail = ({ error }: ErrorDetailProps) => {
   return (
     <div className="error-detail-container">
-      <Text size="small">Error Code</Text>
+      <Text>Error Code</Text>
       <Heading level={1}>{error["ErrorCode"]}</Heading>
       <div className="message-container">
         <Text>
