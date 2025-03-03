@@ -28,6 +28,16 @@
   width: 50%;
 }
 
+.limited-data-container {
+  width: 60%;
+}
+
+@media (max-width: 768px) {
+  .limited-data-container {
+    width: 100%;
+  }
+}
+
 .limited-data-container div {
   margin-top: 20px;
 }

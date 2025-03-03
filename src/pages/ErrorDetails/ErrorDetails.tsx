@@ -19,7 +19,7 @@ export const ErrorDetails = () => {
   return (
     <>
       <BackToSearch />
-      <ErrorDetail errorCode={error["ErrorCode"]} errorMessage={error["ErrorMessage"]} limitedData={error["LimitedData"]}  />
+      <ErrorDetail error={error} />
       <AboutThisTool />
     </>
   );
