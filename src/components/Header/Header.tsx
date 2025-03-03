@@ -53,7 +53,7 @@ export const HeaderPage = () => {
         title="Error Messages"
       >
         <div ref={menuRef} className="menu-container">
-          <Button size="small" variant="secondary" onPress={toggleMenu}>
+          <Button variant="secondary" onPress={toggleMenu}>
             Menu <FontAwesomeIcon icon={faBars} />
           </Button>
 
