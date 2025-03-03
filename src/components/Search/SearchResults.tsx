@@ -16,7 +16,7 @@ const SearchResults = ({ filteredData }: SearchResultsProps) => {
       sortable: true,
       width: "150px",
       cell: (row: ErrorEntry) => (
-        <div style={{ color: "#255A90", textDecoration: "underline" }}>
+        <div style={{ color: "#255A90", textDecoration: "underline" }} tabIndex={0}>
           {row["Error Code"]}
         </div>
       ),
