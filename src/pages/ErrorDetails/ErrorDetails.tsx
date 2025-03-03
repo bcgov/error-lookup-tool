@@ -8,7 +8,7 @@ import { BackToSearch } from "../../components/BackToSearch/BackToSearch";
 export const ErrorDetails = () => {
   const { errorCode } = useParams();
   const error = data["errors"].find(
-    (e: ErrorEntry) => e["Error Code"] === errorCode
+    (e: ErrorEntry) => e["ErrorCode"] === errorCode
   );
 
   if (!error) {
@@ -19,7 +19,7 @@ export const ErrorDetails = () => {
     <>
       <BackToSearch />
 
-      <h1>{error["Error Code"]}</h1>
+      <h1>{error["ErrorCode"]}</h1>
 
       <div>
         {Object.entries(error).map(([key, value]) => (

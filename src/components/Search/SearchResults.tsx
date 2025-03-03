@@ -12,21 +12,21 @@ const SearchResults = ({ filteredData }: SearchResultsProps) => {
   const columns = [
     {
       name: "Error Code",
-      selector: (row: ErrorEntry) => row["Error Code"],
+      selector: (row: ErrorEntry) => row["ErrorCode"],
       sortable: true,
       width: "150px",
       cell: (row: ErrorEntry) => (
         <div
           style={{ color: "#255A90", textDecoration: "underline" }}
           tabIndex={0}
-          onClick={() => navigate(`/error/${row["Error Code"]}`)}
+          onClick={() => navigate(`/error/${row["ErrorCode"]}`)}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
-              navigate(`/error/${row["Error Code"]}`);
+              navigate(`/error/${row["ErrorCode"]}`);
             }
           }}
         >
-          {row["Error Code"]}
+          {row["ErrorCode"]}
         </div>
       )
     },
@@ -38,7 +38,7 @@ const SearchResults = ({ filteredData }: SearchResultsProps) => {
     },
     {
       name: "Error Message",
-      selector: (row: ErrorEntry) => row["Error Message"],
+      selector: (row: ErrorEntry) => row["ErrorMessage"],
       sortable: true,
     },
   ];
@@ -68,7 +68,7 @@ const SearchResults = ({ filteredData }: SearchResultsProps) => {
         highlightOnHover
         pointerOnHover
         paginationRowsPerPageOptions={[10, 20, 50, filteredData.length]}
-        onRowClicked={(row) => navigate(`/error/${row["Error Code"]}`)}
+        onRowClicked={(row) => navigate(`/error/${row["ErrorCode"]}`)}
         customStyles={customStyles}
       />
     </div>
