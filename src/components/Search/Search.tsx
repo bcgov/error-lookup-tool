@@ -12,7 +12,7 @@ export const Search = () => {
   const handleSearch = () => {
     const filtered = data["errors"].filter((error) =>
       Object.values(error).some((field) =>
-        field.toLowerCase().includes(searchTerm.toLowerCase())
+        typeof field === "string" && field.toLowerCase().includes(searchTerm.toLowerCase())
       )
     );
     setFilteredData(filtered);
