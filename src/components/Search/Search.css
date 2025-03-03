@@ -18,7 +18,7 @@
 
 .wide-search-bar {
   flex-grow: 1;
-  min-width: 400px;
+  min-width: 250px;
 }
 
 .wide-search-bar div {
