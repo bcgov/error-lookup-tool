@@ -90,4 +90,4 @@ jobs:
 
       - name: Trigger OpenShift Rollout
         run: |
-          oc rollout restart deployment/lookup
+          oc rollout restart deployment/lookup-deployment
