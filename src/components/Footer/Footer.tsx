@@ -1,11 +1,11 @@
 import "./Footer.css";
-import { Link } from "@bcgov/design-system-react-components";
+import { Link, Text } from "@bcgov/design-system-react-components";
 
 export const FooterPage = () => {
   return (
     <footer className="custom-footer">
       <hr className="footer-line" />
-      <p className="footer-text">
+      <Text size="small" className="footer-text">
         <span>© 2025 Government of British Columbia</span>|
         <Link size="small" href="/update-log">
           Update log
@@ -14,7 +14,7 @@ export const FooterPage = () => {
         <Link size="small" href="/feedback">
           Feedback
         </Link>
-      </p>
+      </Text>
     </footer>
   );
 };

@@ -1,8 +1,10 @@
+import { Accordion } from "@bcgov/design-system-react-components";
+import "./ErrorDetail.css";
 
 export const TechnicalDetails = () => {
-    return (
-        <div>
-            <h1>Technical Details</h1>
-        </div>
-    );
+  return (
+    <div>
+      <Accordion label="Technical details">content</Accordion>
+    </div>
+  );
 };

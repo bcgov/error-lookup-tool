@@ -1,5 +1,15 @@
 .error-detail-container {
-    width: 80%;
-    margin: 0 auto;
-  }
-  
+  width: 80%;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border: 2px black solid;
+}
+
+.message-container {
+  background-color: #f1f8fe;
+}
+
+.limited-data-container {
+  width: 50%;
+}
