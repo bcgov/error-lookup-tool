@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Home } from "./pages/Home/Home";
 import { HeaderPage } from "./components/Header/Header";
 import { FooterPage } from "./components/Footer/Footer";
@@ -19,6 +19,7 @@ export default function App() {
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/update-log" element={<UpdateLog />} />
           <Route path="/troubleshooting" element={<Troubleshooting />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <FooterPage />
       </div>
