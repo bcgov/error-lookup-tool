@@ -16,10 +16,19 @@ const SearchResults = ({ filteredData }: SearchResultsProps) => {
       sortable: true,
       width: "150px",
       cell: (row: ErrorEntry) => (
-        <div style={{ color: "#255A90", textDecoration: "underline" }} tabIndex={0}>
+        <div
+          style={{ color: "#255A90", textDecoration: "underline" }}
+          tabIndex={0}
+          onClick={() => navigate(`/error/${row["Error Code"]}`)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              navigate(`/error/${row["Error Code"]}`);
+            }
+          }}
+        >
           {row["Error Code"]}
         </div>
-      ),
+      )
     },
     {
       name: "Datagroup",
