@@ -17,7 +17,14 @@ spec:
       containers:
         - name: lookup
           image: "{{ .Values.image.tag }}"
+          imagePullPolicy: "{{ .Values.image.pullPolicy }}"
           ports:
             - containerPort: 8080
           resources: {{- toYaml .Values.resources | nindent 12 }}
+          env:
+            - name: VITE_ENV
+              valueFrom:
+                secretKeyRef:
+                  name: lookup-env-secret
+                  key: VITE_ENV
       restartPolicy: Always

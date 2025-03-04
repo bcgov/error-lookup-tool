@@ -9,6 +9,8 @@ import StarImage from "../../assets/star.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
+const environment = import.meta.env.VITE_ENVIRONMENT;
+
 interface SearchBarProps {
   searchTerm: string;
   setSearchTerm: (term: string) => void;
@@ -22,6 +24,12 @@ const SearchBar = ({
 }: SearchBarProps) => {
   const lastUpdated = data["last-upated"];
 
+  const getTitle = () => {
+    if (environment === "dev") return "Development ICM Error Look up";
+    if (environment === "test") return "Test ICM Error Look up";
+    return "ICM Error Look up";
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       onSearchClick();
@@ -31,7 +39,7 @@ const SearchBar = ({
   return (
     <div className="outer-search-bar">
       <div className="inner-search-bar">
-        <Heading level={1}>ICM Error Look up</Heading>
+        <Heading level={1}>{getTitle()}</Heading>
         <div className="last-updated-container">
           <span>
             <img src={StarImage} alt="Star"></img>

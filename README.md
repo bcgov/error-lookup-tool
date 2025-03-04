@@ -21,8 +21,14 @@ Install the following:
    cd error-lookup-tool
    ```
 2. Install dependencies:
+
    ```sh
    npm install
+   ```
+
+3. Copy the environment file example:
+   ```sh
+   cp .env .env.example
    ```
 
 ### Development Server
