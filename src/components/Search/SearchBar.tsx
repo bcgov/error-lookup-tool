@@ -9,7 +9,7 @@ import StarImage from "../../assets/star.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-const environment = import.meta.env.VITE_ENV;
+const environment = import.meta.env.VITE_ENVIRONMENT;
 
 interface SearchBarProps {
   searchTerm: string;
